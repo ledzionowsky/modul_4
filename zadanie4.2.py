@@ -4,12 +4,8 @@ def is_palindrome(s):
     """
     funkcja posiada zmienną "s"
     metoda "lower" zmienia wszystkie litery na małe
-    metoda "replace" usuwa spacje
-    pierwsza meotda "print" wypisuje podane przeze mnie słowo
-    druga funkcja "print" wypisuje owrócone słowo
-    przy komendzie :return został podany warunek sprawdzenia czy podane przeze mnie słowo jest równe odwróconemu
-    wypisujemy wywołaną funkcję
-    jeśli słowa są takie same otrzymujemy True, inczej False
+    pętla for selekcjonuje znaki zatrzymując tylko te, które w tym przypadku są tylko literą a następnia wrzuca ją do listy "znaki"
+    porownujemy znaki w liscie ze znakami listy odwroconej
     """
     znaki = []
     s=s.lower()
