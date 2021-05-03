@@ -11,14 +11,11 @@ def is_palindrome(s):
     wypisujemy wywołaną funkcję
     jeśli słowa są takie same otrzymujemy True, inczej False
     """
-
+    znaki = []
     s=s.lower()
-    s=s.replace(" ","")
-
-    #s=s.translate(None,string.punctuation) 
-
-    print(f"My string: {s}")
-    print(f"Reverced string: {s[::-1]}")
-    return s == s[::-1]
+    for znak in s:
+        if znak.isalnum():
+            znaki.append(znak)
+    return znaki == znaki[::-1]
 
 print(is_palindrome("Kobyła ma, mały bok"))
