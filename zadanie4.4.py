@@ -9,10 +9,7 @@ def mnozenie(a,b):
     return a*b
 def dzielenie(a,b):
     return a/b
-def dane():
-    a=input()
-    b=input()
-    return a,b
+
 operation = input("Podaj numer operacji jaką chcesz wykonać\n"
                   "1 - Dodawanie\n"
                   "2 - Odejmowanie\n"
@@ -20,8 +17,8 @@ operation = input("Podaj numer operacji jaką chcesz wykonać\n"
                   "4 - Dzielenie\n"
                   "Twoja operacja: ")
 
-#b = float(input("Podaj liczbe: "))
-#a = float(input("Podaj liczbe: "))
+b = float(input("Podaj liczbe: "))
+a = float(input("Podaj liczbe: "))
 
 if operation == '1':
 
