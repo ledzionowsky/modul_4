@@ -1,38 +1,57 @@
 import logging
 logging.basicConfig(level=logging.DEBUG)
 
-def dodawanie(a,b):
-    return a+b
-def odejmowanie(a,b):
-    return a-b
-def mnozenie(a,b):
-    return a*b
-def dzielenie(a,b):
-    return a/b
+def dodawanie(a, b):
+    result = a + b
+    logging.info(f"Wybrałeś dodawanie. Wynik jest równy: {result}")
+    return result
 
-operation = input("Podaj numer operacji jaką chcesz wykonać\n"
-                  "1 - Dodawanie\n"
-                  "2 - Odejmowanie\n"
-                  "3 - Mnożenie\n"
-                  "4 - Dzielenie\n"
-                  "Twoja operacja: ")
+def odejmowanie(a, b):
+    result = a - b
+    logging.info(f"Wybrałeś odejmowanie. Wynik jest równy: {result}")
+    return result
 
-b = float(input("Podaj liczbe: "))
-a = float(input("Podaj liczbe: "))
+def mnozenie(a, b):
+    result = a * b
+    logging.info(f"Wybrałeś mnożenie. Wynik jest równy: {result}")
+    return result
 
-if operation == '1':
-
-    logging.info("Wybrałeś dodawanie. Wynik jest równy: "+str(dodawanie(a,b)))
-elif operation == '2':
-    logging.info("Wybrałeś odejmowanie. Wynik jest równy: "+str(odejmowanie(a,b)))
-elif operation == '3':
-    logging.info("Wybrałeś mnożenie. Wynik jest równy: "+str(mnozenie(a,b)))
-elif operation == '4':
-    if b!=0:
-        logging.info("Wybrałeś dzielenie. Wynik jest równy: "+str(dzielenie(a,b)))
+def dzielenie(a, b):
+    if b != 0:
+        result = a / b
+        logging.info(f"Wybrałeś dzielenie. Wynik jest równy: {result}")
     else:
         logging.info("Pamiętaj cholero nie dziel przez zero")
         exit(1)
-else:
-    logging.info("Nie podano operacji!")
-    exit(1)
+    return result
+
+operations = {
+    "1": dodawanie,
+    "2": odejmowanie,
+    "3": mnozenie,
+    "4": dzielenie
+}
+
+def get_data():
+    operation = input("Podaj numer operacji jaką chcesz wykonać\n"
+                      "1 - Dodawanie\n"
+                      "2 - Odejmowanie\n"
+                      "3 - Mnożenie\n"
+                      "4 - Dzielenie\n"
+                      "Twoja operacja: ")
+
+    b = float(input("Podaj liczbe: "))
+    a = float(input("Podaj liczbe: "))
+    return operation, a, b
+
+
+def main():
+    op, a, b = get_data()
+    try:
+        result = operations[op](a, b)
+    except KeyError:
+        logging.info("Nie podano operacji!")
+
+
+if __name__ == "__main__":
+    main()
