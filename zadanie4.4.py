@@ -40,8 +40,8 @@ def get_data():
                       "4 - Dzielenie\n"
                       "Twoja operacja: ")
 
-    b = float(input("Podaj liczbe: "))
     a = float(input("Podaj liczbe: "))
+    b = float(input("Podaj liczbe: "))
     return operation, a, b
 
 
@@ -51,7 +51,6 @@ def main():
         result = operations[op](a, b)
     except KeyError:
         logging.info("Nie podano operacji!")
-
 
 if __name__ == "__main__":
     main()
